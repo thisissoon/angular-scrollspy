@@ -1,0 +1,10 @@
+{
+  "ghostMode": false,
+  "server": {
+    "baseDir": "src/demo",
+    "routes": {
+      "/node_modules": "node_modules",
+      "/angular-scrollspy": "src/lib"
+    }
+  }
+}
