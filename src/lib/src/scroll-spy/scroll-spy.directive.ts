@@ -1,72 +1,74 @@
-import { Directive, ElementRef, OnInit } from '@angular/core';
+import {
+  Directive, ContentChildren, QueryList, AfterViewInit,
+  Input, OnDestroy
+} from '@angular/core';
+import { ScrollSpyItemDirective } from '../scroll-spy-item/scroll-spy-item.directive';
+import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
 
 /**
- * Removes excess text from element until it fits in elements
- * and appends a scrollspy symbol to end of text. This requires that
- * the elements height be fixed and it's `overflow` css property
- * be `hidden`
+ * Adds `active` class to navigation links when section is in the viewport.
+ * Used in conjuction with `snScrollItem` directive which should be added
+ * to anchor links in the nav
  *
  * @example
  * ```
- * <p snScrollSpy>Ullamco esse laborum</p>
+ * <ul role="navigation" snScrollSpy id="foo">
+ *  <li><a snScrollSpyItem for="foo" href="#section1">Section 1</a></li>
+ *  <li><a snScrollSpyItem for="foo" href="#section2">Section 2</a></li>
+ *  <li><a snScrollSpyItem for="foo" href="#section3">Section 3</a></li>
+ *  <li><a snScrollSpyItem for="foo" href="#section4">Section 4</a></li>
+ * </ul>
  * ```
  *
  * @export
  * @class ScrollSpyDirective
- * @implements {OnInit}
+ * @implements {AfterViewInit}
+ * @implements {OnDestroy}
  */
 @Directive({
-  selector: '[snScrollSpy]'
-})
-export class ScrollSpyDirective implements OnInit {
-  /**
-   * ScrollSpy charater
-   *
-   * @private
-   * @memberof ScrollSpyDirective
-   */
-  private scrollspyChar = '…';
-  /**
-   * If true means the elements contents are larger
-   * than the size of the element.
-   *
-   * @readonly
-   * @private
-   * @type {boolean}
-   * @memberof ScrollSpyDirective
-   */
-  private get hasOverflow(): boolean {
-    const el: HTMLElement = this.el.nativeElement;
-    return el.scrollHeight > el.offsetHeight;
+  selector: '[snScrollSpy]',
+  queries: {
+    spyItems: new ContentChildren(ScrollSpyItemDirective)
   }
+})
+export class ScrollSpyDirective implements AfterViewInit, OnDestroy {
+  /**
+   * Collection of `ScrollSpyItem`. They are the list of
+   * nav items.
+   *
+   * @type {QueryList<ScrollSpyItemDirective>}
+   * @memberof ScrollSpyDirective
+   */
+  @ContentChildren(ScrollSpyItemDirective)
+  public items: QueryList<ScrollSpyItemDirective>;
+  /**
+   * ID of scrollSpy instance
+   *
+   * @type {string}
+   * @memberof ScrollSpyDirective
+   */
+  @Input()
+  public id: string;
   /**
    * Creates an instance of ScrollSpyDirective.
-   * @param {ElementRef} el
+   * @param {ScrollSpyService} scrollSpySvc
    * @memberof ScrollSpyDirective
    */
-  constructor(private el: ElementRef) { }
+  constructor(private scrollSpySvc: ScrollSpyService) { }
   /**
-   * Clip text on component initialisation
+   * Adds spy to list of spys in `ScrollSpyService`
    *
    * @memberof ScrollSpyDirective
    */
-  public ngOnInit(): void {
-    this.clipText();
+  public ngAfterViewInit(): void {
+    this.scrollSpySvc.addSpy(this.id, this.items);
   }
   /**
-   * Removes character from end of `innerText`
-   * until text fits in element and appends
-   * a scrollspy symbol to the end.
+   * Remove spy from list of spys when directive is destroyed
    *
-   * @private
    * @memberof ScrollSpyDirective
    */
-  private clipText(): void {
-    const el: HTMLElement = this.el.nativeElement;
-    let text = el.innerText.split(' ');
-    while (this.hasOverflow) {
-      text = text.slice(0, -1);
-      el.innerText = `${text.join(' ')}${this.scrollspyChar}`;
-    };
+  public ngOnDestroy(): void {
+    this.scrollSpySvc.removeSpy(this.id);
   }
 }
