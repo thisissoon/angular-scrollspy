@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0-rc.1"></a>
+# [1.2.0-rc.1](https://github.com/thisissoon/angular-scrollspy/compare/v1.2.0-rc.0...v1.2.0-rc.1) (2017-11-30)
+
+
+### Bug Fixes
+
+* **build:** dont bundle inviewport module ([8513ecc](https://github.com/thisissoon/angular-scrollspy/commit/8513ecc))
+
+
+
 <a name="1.2.0-rc.0"></a>
 # [1.2.0-rc.0](https://github.com/thisissoon/angular-scrollspy/compare/v1.1.0...v1.2.0-rc.0) (2017-11-30)
 
