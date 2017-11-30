@@ -34,16 +34,16 @@ lines_after_imports=2
 indent_style = space
 indent_size = 2
 
-# Front End Languages (HTML, JS, CSS etc)
+# Front End Languages (HTML, JS/TS, CSS etc)
 
-[*.{ts, js, css, html}]
+[*.{js, ts, css, html}]
 indent_style = space
 indent_size = 2
 charset = utf-8
 trim_trailing_whitespace = true
 
-## JS
-[*.{js,ts}]
+## JS/TS
+[*.{js, ts}]
 quote_type = single
 
 # Misc

@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  padding-top: 40px;
+}
+
+.section {
+  min-height: 101vh;
+}
+
+.section {
+  align-items: center;
+  color: black;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+#section1 .section { background-color: #fef65b; }
+#section2 .section { background-color: #dfe134; }
+#section3 .section { background-color: #3fac54; }
+#section4 .section { background-color: #599346; }
+
+.nav {
+  background-color: #fff;
+  display: flex;
+  left: 0;
+  list-style: none;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  top: 0;
+  z-index: 9;
+
+  .nav-item > a {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+  }
+}
+
+.nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
