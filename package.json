@@ -69,6 +69,7 @@
     "codelyzer": "^4.0.1",
     "core-js": "^2.4.1",
     "coveralls": "^3.0.0",
+    "cz-conventional-changelog": "^2.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -86,5 +87,10 @@
     "tslint": "~5.7.0",
     "typescript": "~2.4.2",
     "zone.js": "^0.8.14"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
