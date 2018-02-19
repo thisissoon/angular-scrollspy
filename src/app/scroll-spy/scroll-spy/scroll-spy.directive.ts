@@ -20,10 +20,6 @@ import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
  * </ul>
  * ```
  *
- * @export
- * @class ScrollSpyDirective
- * @implements {AfterViewInit}
- * @implements {OnDestroy}
  */
 @Directive({
   selector: '[snScrollSpy]',
@@ -36,7 +32,6 @@ export class ScrollSpyDirective implements AfterViewInit, OnDestroy {
    * Collection of `ScrollSpyItem`. They are the list of
    * nav items.
    *
-   * @type {QueryList<ScrollSpyItemDirective>}
    * @memberof ScrollSpyDirective
    */
   @ContentChildren(ScrollSpyItemDirective)
@@ -44,14 +39,12 @@ export class ScrollSpyDirective implements AfterViewInit, OnDestroy {
   /**
    * ID of scrollSpy instance
    *
-   * @type {string}
    * @memberof ScrollSpyDirective
    */
   @Input()
   public id: string;
   /**
    * Creates an instance of ScrollSpyDirective.
-   * @param {ScrollSpyService} scrollSpySvc
    * @memberof ScrollSpyDirective
    */
   constructor(private scrollSpySvc: ScrollSpyService) { }

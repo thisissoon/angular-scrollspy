@@ -6,14 +6,11 @@ import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
  * `ScrollSpyService` when it's in view
  *
  * @example
- * ```
+ * ```html
  *  <sn-scroll-spy-section id="section1" for="foo">
  *    ...
  *  </sn-scroll-spy-section>
  * ```
- *
- * @export
- * @class ScrollSpySectionComponent
  */
 @Component({
   selector: 'sn-scroll-spy-section',
@@ -24,7 +21,6 @@ export class ScrollSpySectionComponent {
   /**
    * Identifies the section
    *
-   * @type {string}
    * @memberof ScrollSpySectionComponent
    */
   @Input()
@@ -32,7 +28,6 @@ export class ScrollSpySectionComponent {
   /**
    * Specifies which `ScrollSpy` instance to update
    *
-   * @type {string}
    * @memberof ScrollSpySectionComponent
    */
   @Input()
@@ -41,7 +36,6 @@ export class ScrollSpySectionComponent {
    * Amount of time in ms to wait for other scroll events
    * before running event handler
    *
-   * @type {number}
    * @default 0
    * @memberof ScrollSpySectionComponent
    */
@@ -49,14 +43,12 @@ export class ScrollSpySectionComponent {
   public debounce = 0;
   /**
    * Creates an instance of ScrollSpySectionComponent.
-   * @param {ScrollSpyService} scrollSpySvc
    * @memberof ScrollSpySectionComponent
    */
   constructor(private scrollSpySvc: ScrollSpyService) { }
   /**
    * Updates `ScrollSpy` section when element enters/leaves viewport
    *
-   * @param {boolean} inViewport
    * @memberof ScrollSpySectionComponent
    */
   public onInViewportChange(inViewport: boolean): void {

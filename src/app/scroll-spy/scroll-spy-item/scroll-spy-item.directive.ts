@@ -5,14 +5,10 @@ import { Directive, Input, HostBinding, ChangeDetectorRef } from '@angular/core'
  * when the section is in the viewport
  *
  * @example
- * ```
+ * ```html
  * <a snScrollSpyItem for="foo" href="#section1">Section 1</a>
  * ```
  *
- * @export
- * @class ScrollSpyItemDirective
- * @implements {AfterViewInit}
- * @implements {OnDestroy}
  */
 @Directive({
   selector: '[snScrollSpyItem]'
@@ -22,7 +18,6 @@ export class ScrollSpyItemDirective {
    * True if the nav item is the active item in the `items` list
    * for `ScrollSpyDirective` instance
    *
-   * @type {boolean}
    * @memberof ScrollSpyItemDirective
    */
   @HostBinding('class.active')
@@ -30,7 +25,6 @@ export class ScrollSpyItemDirective {
   /**
    * ID of `ScrollSpyDirective` instance
    *
-   * @type {string}
    * @memberof ScrollSpyItemDirective
    */
   @Input()
@@ -38,7 +32,6 @@ export class ScrollSpyItemDirective {
   /**
    * Hash for section to link to
    *
-   * @type {string}
    * @memberof ScrollSpyItemDirective
    */
   @Input()
@@ -46,7 +39,6 @@ export class ScrollSpyItemDirective {
   /**
    * If true means the section is in the viewport
    *
-   * @type {boolean}
    * @memberof ScrollSpyItemDirective
    */
   public inViewport = false;
@@ -54,7 +46,6 @@ export class ScrollSpyItemDirective {
    * Id of section that links navigates to
    *
    * @readonly
-   * @type {string}
    * @memberof ScrollSpyItemDirective
    */
   public get section(): string {
@@ -62,7 +53,6 @@ export class ScrollSpyItemDirective {
   }
   /**
    * Creates an instance of ScrollSpyItemDirective.
-   * @param {ChangeDetectorRef} cdRef
    * @memberof ScrollSpyItemDirective
    */
   constructor(private cdRef: ChangeDetectorRef) { }

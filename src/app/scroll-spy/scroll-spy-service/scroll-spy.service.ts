@@ -7,15 +7,12 @@ import { Spy } from '../shared/spy.model';
  * Service that stores a list of `Spy`'s and the state
  * of their nav items `inViewport` and `active` state
  *
- * @export
- * @class ScrollSpyService
  */
 @Injectable()
 export class ScrollSpyService {
   /**
    * List of `Spy`'s
    *
-   * @type {Spy[]}
    * @memberof ScrollSpyService
    */
   public spys: Spy[] = [];
@@ -23,15 +20,12 @@ export class ScrollSpyService {
    * Stores requests to add items to spy when spy hasn't been created
    * yet. Once spy has been added then request will be made again.
    *
-   * @type {any[]}
    * @memberof ScrollSpyService
    */
   public buffer: any[] = [];
   /**
    * Add spy to list of `spys`
    *
-   * @param {string} id
-   * @param {QueryList<ScrollSpyItemDirective>} items
    * @memberof ScrollSpyService
    */
   public addSpy(id: string, items: QueryList<ScrollSpyItemDirective>): void {
@@ -43,7 +37,6 @@ export class ScrollSpyService {
   /**
    * Remove spy from list of `spys`
    *
-   * @param {string} id
    * @memberof ScrollSpyService
    */
   public removeSpy(id: string): void {
@@ -55,10 +48,6 @@ export class ScrollSpyService {
    * to true for the first item in the list that has `inViewport`
    * set to true
    *
-   * @param {string} sectionId
-   * @param {string} spyId
-   * @param {boolean} inViewport
-   * @returns {void}
    * @memberof ScrollSpyService
    */
   public setSpySectionStatus(sectionId: string, spyId: string, inViewport: boolean): void {
