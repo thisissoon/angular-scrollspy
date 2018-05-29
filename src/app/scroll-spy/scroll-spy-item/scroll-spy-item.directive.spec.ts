@@ -21,5 +21,4 @@ describe('ScrollSpyDirective', () => {
     const result = directive.section;
     expect(result).toBe('section1');
   });
-
 });

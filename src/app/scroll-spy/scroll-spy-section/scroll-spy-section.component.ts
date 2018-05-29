@@ -23,15 +23,13 @@ export class ScrollSpySectionComponent {
    *
    * @memberof ScrollSpySectionComponent
    */
-  @Input()
-  public id: string;
+  @Input() public id: string;
   /**
    * Specifies which `ScrollSpy` instance to update
    *
    * @memberof ScrollSpySectionComponent
    */
-  @Input()
-  public for: string;
+  @Input() public for: string;
   /**
    * Amount of time in ms to wait for other scroll events
    * before running event handler
@@ -39,13 +37,12 @@ export class ScrollSpySectionComponent {
    * @default 0
    * @memberof ScrollSpySectionComponent
    */
-  @Input()
-  public debounce = 0;
+  @Input() public debounce = 0;
   /**
    * Creates an instance of ScrollSpySectionComponent.
    * @memberof ScrollSpySectionComponent
    */
-  constructor(private scrollSpySvc: ScrollSpyService) { }
+  constructor(private scrollSpySvc: ScrollSpyService) {}
   /**
    * Updates `ScrollSpy` section when element enters/leaves viewport
    *

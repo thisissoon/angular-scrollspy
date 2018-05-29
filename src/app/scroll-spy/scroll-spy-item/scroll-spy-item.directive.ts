@@ -1,4 +1,9 @@
-import { Directive, Input, HostBinding, ChangeDetectorRef } from '@angular/core';
+import {
+  Directive,
+  Input,
+  HostBinding,
+  ChangeDetectorRef
+} from '@angular/core';
 
 /**
  * A directive used to add an `active` class to a nav item
@@ -20,22 +25,19 @@ export class ScrollSpyItemDirective {
    *
    * @memberof ScrollSpyItemDirective
    */
-  @HostBinding('class.active')
-  public active = false;
+  @HostBinding('class.active') public active = false;
   /**
    * ID of `ScrollSpyDirective` instance
    *
    * @memberof ScrollSpyItemDirective
    */
-  @Input()
-  public for: string;
+  @Input() public for: string;
   /**
    * Hash for section to link to
    *
    * @memberof ScrollSpyItemDirective
    */
-  @Input()
-  public href: string;
+  @Input() public href: string;
   /**
    * If true means the section is in the viewport
    *
@@ -55,7 +57,7 @@ export class ScrollSpyItemDirective {
    * Creates an instance of ScrollSpyItemDirective.
    * @memberof ScrollSpyItemDirective
    */
-  constructor(private cdRef: ChangeDetectorRef) { }
+  constructor(private cdRef: ChangeDetectorRef) {}
   /**
    * Manually trigger change detection
    *

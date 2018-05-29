@@ -16,13 +16,8 @@ describe('ScrollSpySectionComponent', () => {
       providers: [
         { provide: ScrollSpyService, useValue: mockScrollSpyService }
       ],
-      schemas: [
-        NO_ERRORS_SCHEMA,
-        CUSTOM_ELEMENTS_SCHEMA
-      ],
-      declarations: [
-        ScrollSpySectionComponent
-      ]
+      schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [ScrollSpySectionComponent]
     }).compileComponents();
   }));
 
@@ -36,11 +31,18 @@ describe('ScrollSpySectionComponent', () => {
 
   it('should set spy section status on onInViewportChange', () => {
     component.onInViewportChange(true);
-    expect(mockScrollSpyService.setSpySectionStatus).toHaveBeenCalledWith('bar', 'foo', true);
+    expect(mockScrollSpyService.setSpySectionStatus).toHaveBeenCalledWith(
+      'bar',
+      'foo',
+      true
+    );
 
     mockScrollSpyService.setSpySectionStatus.calls.reset();
     component.onInViewportChange(false);
-    expect(mockScrollSpyService.setSpySectionStatus).toHaveBeenCalledWith('bar', 'foo', false);
+    expect(mockScrollSpyService.setSpySectionStatus).toHaveBeenCalledWith(
+      'bar',
+      'foo',
+      false
+    );
   });
-
 });

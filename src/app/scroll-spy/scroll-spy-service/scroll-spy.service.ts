@@ -30,9 +30,11 @@ export class ScrollSpyService {
    */
   public addSpy(id: string, items: QueryList<ScrollSpyItemDirective>): void {
     this.spys.push({ id, items });
-    const buffer = this.buffer.filter((i) => i.spyId === id);
-    this.buffer = this.buffer.filter((i) => i.spyId !== id);
-    buffer.forEach((i) => this.setSpySectionStatus(i.sectionId, i.spyId, i.inViewport));
+    const buffer = this.buffer.filter(i => i.spyId === id);
+    this.buffer = this.buffer.filter(i => i.spyId !== id);
+    buffer.forEach(i =>
+      this.setSpySectionStatus(i.sectionId, i.spyId, i.inViewport)
+    );
   }
   /**
    * Remove spy from list of `spys`
@@ -40,7 +42,7 @@ export class ScrollSpyService {
    * @memberof ScrollSpyService
    */
   public removeSpy(id: string): void {
-    const i = this.spys.findIndex((s) => s.id === id);
+    const i = this.spys.findIndex(s => s.id === id);
     this.spys.splice(i, 1);
   }
   /**
@@ -50,18 +52,24 @@ export class ScrollSpyService {
    *
    * @memberof ScrollSpyService
    */
-  public setSpySectionStatus(sectionId: string, spyId: string, inViewport: boolean): void {
-    const spy = this.spys.find((s) => s.id === spyId);
+  public setSpySectionStatus(
+    sectionId: string,
+    spyId: string,
+    inViewport: boolean
+  ): void {
+    const spy = this.spys.find(s => s.id === spyId);
     if (!spy) {
       this.buffer.push({ sectionId, spyId, inViewport });
       return;
     }
-    const item = spy.items.find((i) => i.section === sectionId);
-    if (!item) { return; }
+    const item = spy.items.find(i => i.section === sectionId);
+    if (!item) {
+      return;
+    }
 
     item.inViewport = inViewport;
-    const firstInViewport = spy.items.filter((i) => i.inViewport)[0];
-    spy.items.forEach((i) => i.active = false);
+    const firstInViewport = spy.items.filter(i => i.inViewport)[0];
+    spy.items.forEach(i => (i.active = false));
 
     if (firstInViewport) {
       firstInViewport.active = true;

@@ -6,18 +6,11 @@ import { ScrollSpySectionComponent } from './scroll-spy-section/scroll-spy-secti
 import { ScrollSpyItemDirective } from './scroll-spy-item/scroll-spy-item.directive';
 import { ScrollSpyService } from './scroll-spy-service/scroll-spy.service';
 
-const directives: any[] = [
-  ScrollSpyDirective,
-  ScrollSpyItemDirective,
-];
+const directives: any[] = [ScrollSpyDirective, ScrollSpyItemDirective];
 
-const components: any[] = [
-  ScrollSpySectionComponent
-];
+const components: any[] = [ScrollSpySectionComponent];
 
-const providers: Provider[] = [
-  ScrollSpyService
-];
+const providers: Provider[] = [ScrollSpyService];
 
 /**
  * A simple lightweight library for Angular 2/4+ which automatically
@@ -25,17 +18,9 @@ const providers: Provider[] = [
  *
  */
 @NgModule({
-  imports: [
-    InViewportModule
-  ],
-  declarations: [
-    ...directives,
-    ...components
-  ],
-  exports: [
-    ...directives,
-    ...components
-  ]
+  imports: [InViewportModule],
+  declarations: [...directives, ...components],
+  exports: [...directives, ...components]
 })
 export class ScrollSpyModule {
   /**
@@ -48,9 +33,7 @@ export class ScrollSpyModule {
   public static forRoot(): ModuleWithProviders {
     return {
       ngModule: ScrollSpyModule,
-      providers: [
-        ...providers
-      ]
+      providers: [...providers]
     };
   }
 }

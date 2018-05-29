@@ -43,13 +43,12 @@ export class ScrollSpyDirective implements AfterViewInit, OnDestroy {
    *
    * @memberof ScrollSpyDirective
    */
-  @Input()
-  public id: string;
+  @Input() public id: string;
   /**
    * Creates an instance of ScrollSpyDirective.
    * @memberof ScrollSpyDirective
    */
-  constructor(private scrollSpySvc: ScrollSpyService) { }
+  constructor(private scrollSpySvc: ScrollSpyService) {}
   /**
    * Adds spy to list of spys in `ScrollSpyService`
    *
