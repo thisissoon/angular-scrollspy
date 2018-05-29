@@ -1,7 +1,12 @@
 import {
-  Directive, ContentChildren, QueryList, AfterViewInit,
-  Input, OnDestroy
+  Directive,
+  ContentChildren,
+  QueryList,
+  AfterViewInit,
+  Input,
+  OnDestroy
 } from '@angular/core';
+
 import { ScrollSpyItemDirective } from '../scroll-spy-item/scroll-spy-item.directive';
 import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
 
@@ -22,10 +27,7 @@ import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
  *
  */
 @Directive({
-  selector: '[snScrollSpy]',
-  queries: {
-    spyItems: new ContentChildren(ScrollSpyItemDirective)
-  }
+  selector: '[snScrollSpy]'
 })
 export class ScrollSpyDirective implements AfterViewInit, OnDestroy {
   /**
