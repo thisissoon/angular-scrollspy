@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/thisissoon/angular-scrollspy/compare/v1.2.2...v2.0.0) (2018-05-29)
+
+
+### Features
+
+* **scrollspy:** adding angular 6 support ([0473051](https://github.com/thisissoon/angular-scrollspy/commit/0473051))
+
+
+### BREAKING CHANGES
+
+* **scrollspy:** updated peer dependency for angular-inviewport to 3.x
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/thisissoon/angular-scrollspy/compare/v1.2.1...v1.2.2) (2018-02-19)
 
