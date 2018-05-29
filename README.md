@@ -3,17 +3,18 @@
 [![Build Status][travis-badge]][travis-badge-url]
 [![Coverage Status][coveralls-badge]][coveralls-badge-url]
 [![Commitizen friendly][commitizen-badge]][commitizen]
+[![code style: prettier][prettier-badge]][prettier-badge-url]
 
 A simple lightweight library for [Angular][angular] which automatically updates links to indicate the currently active section in the viewport. Requires [Angular Inviewport][angular-inviewport] to be installed as well.
 
 This is a simple library for [Angular][angular], implemented in the [Angular Package Format v5.0](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit#heading=h.k0mh3o8u5hx).
-
 
 ## Install
 
 `npm i @thisissoon/{angular-scrollspy,angular-inviewport} --save`
 
 `app.module.ts`
+
 ```ts
 import { InViewportModule, WindowRef } from '@thisissoon/angular-inviewport';
 import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
@@ -21,19 +22,13 @@ import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
 // Provide window object for browser and a suitable replacement
 // on other platforms
 const getWindow = () => window;
-const providers: Provider[] = [
-  { provide: WindowRef, useFactory: (getWindow) },
-];
+const providers: Provider[] = [{ provide: WindowRef, useFactory: getWindow }];
 
 @NgModule({
-  imports: [
-    InViewportModule.forRoot(providers),
-    ScrollSpyModule.forRoot()
-  ]
+  imports: [InViewportModule.forRoot(providers), ScrollSpyModule.forRoot()]
 })
-export class AppModule { }
+export class AppModule {}
 ```
-
 
 ## Example
 
@@ -58,17 +53,15 @@ A working example can be forund in the [src](https://github.com/thisissoon/angul
 `app.component.css`
 
 ```css
-
 a {
   color: blue;
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 a.active {
   color: darkblue;
 }
 ```
-
 
 ## Development server
 
@@ -102,15 +95,15 @@ Run `npm run release` to create a new release. This will use [Standard Version][
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
-
 [travis-badge]: https://travis-ci.org/thisissoon/angular-scrollspy.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/thisissoon/angular-scrollspy
 [coveralls-badge]: https://coveralls.io/repos/github/thisissoon/angular-scrollspy/badge.svg?branch=master
 [coveralls-badge-url]: https://coveralls.io/github/thisissoon/angular-scrollspy?branch=master
 [angular]: https://angular.io/
 [angular-inviewport]: https://github.com/thisissoon/angular-inviewport/
-[commitizen]:http://commitizen.github.io/cz-cli/
-[commitizen-badge]:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
-[conventional-changelog]:https://github.com/conventional-changelog/conventional-changelog
-[standard-version]:https://github.com/conventional-changelog/standard-version
+[prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=shield
+[prettier-badge-url]: https://github.com/prettier/prettier
+[conventional-changelog]: https://github.com/conventional-changelog/conventional-changelog
+[commitizen]: http://commitizen.github.io/cz-cli/
+[commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[standard-version]: https://github.com/conventional-changelog/standard-version

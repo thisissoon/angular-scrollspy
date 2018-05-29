@@ -13,7 +13,7 @@ const components: any[] = [ScrollSpySectionComponent];
 const providers: Provider[] = [ScrollSpyService];
 
 /**
- * A simple lightweight library for Angular 2/4+ which automatically
+ * A simple lightweight library for Angular which automatically
  * updates links to indicate the currently active section in the viewport
  *
  */
