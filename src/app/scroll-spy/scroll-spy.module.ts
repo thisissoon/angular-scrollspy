@@ -20,7 +20,7 @@ const providers: Provider[] = [ScrollSpyService];
 @NgModule({
   imports: [InViewportModule],
   declarations: [...directives, ...components],
-  exports: [...directives, ...components]
+  exports: [...directives, ...components],
 })
 export class ScrollSpyModule {
   /**
@@ -33,7 +33,7 @@ export class ScrollSpyModule {
   public static forRoot(): ModuleWithProviders {
     return {
       ngModule: ScrollSpyModule,
-      providers: [...providers]
+      providers: [...providers],
     };
   }
 }

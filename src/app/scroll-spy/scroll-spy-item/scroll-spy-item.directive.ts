@@ -2,7 +2,7 @@ import {
   Directive,
   Input,
   HostBinding,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from '@angular/core';
 
 /**
@@ -16,7 +16,7 @@ import {
  *
  */
 @Directive({
-  selector: '[snScrollSpyItem]'
+  selector: '[snScrollSpyItem]',
 })
 export class ScrollSpyItemDirective {
   /**

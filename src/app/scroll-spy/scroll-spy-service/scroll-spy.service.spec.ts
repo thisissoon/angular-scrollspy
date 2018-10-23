@@ -7,7 +7,7 @@ import { ScrollSpyItemDirective } from '../scroll-spy-item/scroll-spy-item.direc
 describe('ScrollSpyService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ScrollSpyService]
+      providers: [ScrollSpyService],
     });
   });
 
@@ -21,9 +21,9 @@ describe('ScrollSpyService', () => {
       service.addSpy('bar', items);
       expect(service.spys).toEqual([
         { id: 'foo', items },
-        { id: 'bar', items }
+        { id: 'bar', items },
       ]);
-    }
+    },
   ));
 
   it('should remove spy from list of spys', inject(
@@ -36,7 +36,7 @@ describe('ScrollSpyService', () => {
       expect(service.spys).toEqual([{ id: 'foo', items }]);
       service.removeSpy('foo');
       expect(service.spys).toEqual([]);
-    }
+    },
   ));
 
   it('should set spy section status', inject(
@@ -48,8 +48,8 @@ describe('ScrollSpyService', () => {
           section: 'section1',
           inViewport: false,
           active: false,
-          detectChanges: () => {}
-        }
+          detectChanges: () => {},
+        },
       ];
       const items2 = [
         {
@@ -57,12 +57,12 @@ describe('ScrollSpyService', () => {
           section: 'section2',
           inViewport: true,
           active: true,
-          detectChanges: () => {}
-        }
+          detectChanges: () => {},
+        },
       ];
       service.spys = <any>[
         { id: 'foo', items: items1 },
-        { id: 'bar', items: items2 }
+        { id: 'bar', items: items2 },
       ];
 
       service.setSpySectionStatus('section1', 'foo', true);
@@ -71,7 +71,7 @@ describe('ScrollSpyService', () => {
       expect(items1[0].inViewport).toBeTruthy();
       service.setSpySectionStatus('section1', 'foo', false);
       expect(items1[0].inViewport).toBeFalsy();
-    }
+    },
   ));
 
   it("should NOT set spy section status if spy doesn't exist", inject(
@@ -83,8 +83,8 @@ describe('ScrollSpyService', () => {
           section: 'section1',
           inViewport: false,
           active: false,
-          detectChanges: () => {}
-        }
+          detectChanges: () => {},
+        },
       ];
       const items2 = [
         {
@@ -92,12 +92,12 @@ describe('ScrollSpyService', () => {
           section: 'section2',
           inViewport: false,
           active: false,
-          detectChanges: () => {}
-        }
+          detectChanges: () => {},
+        },
       ];
       service.spys = <any>[
         { id: 'foo', items: items1 },
-        { id: 'bar', items: items2 }
+        { id: 'bar', items: items2 },
       ];
 
       service.setSpySectionStatus('section1', 'baz', true);
@@ -106,7 +106,7 @@ describe('ScrollSpyService', () => {
       expect(service.buffer[0]).toEqual({
         sectionId: 'section1',
         spyId: 'baz',
-        inViewport: true
+        inViewport: true,
       });
 
       service.setSpySectionStatus('section3', 'foo', true);
@@ -114,7 +114,7 @@ describe('ScrollSpyService', () => {
       expect(service.buffer.length).toBe(1);
       expect(service.spys[0].items[0].inViewport).toBeFalsy();
       expect(service.spys[1].items[0].inViewport).toBeFalsy();
-    }
+    },
   ));
 
   it('should clear buffer and update inViewport statuses', inject(
@@ -126,15 +126,15 @@ describe('ScrollSpyService', () => {
           section: 'section1',
           inViewport: false,
           active: false,
-          detectChanges: () => {}
+          detectChanges: () => {},
         },
         {
           spyId: 'foo',
           section: 'section2',
           inViewport: false,
           active: false,
-          detectChanges: () => {}
-        }
+          detectChanges: () => {},
+        },
       ];
       const items2 = [
         {
@@ -142,21 +142,21 @@ describe('ScrollSpyService', () => {
           section: 'section1',
           inViewport: false,
           active: false,
-          detectChanges: () => {}
+          detectChanges: () => {},
         },
         {
           spyId: 'bar',
           section: 'section2',
           inViewport: false,
           active: false,
-          detectChanges: () => {}
-        }
+          detectChanges: () => {},
+        },
       ];
       service.spys = [];
 
       service.buffer = [
         { sectionId: 'section1', spyId: 'bar', inViewport: true },
-        { sectionId: 'section2', spyId: 'foo', inViewport: true }
+        { sectionId: 'section2', spyId: 'foo', inViewport: true },
       ];
 
       service.addSpy('foo', <any>items1);
@@ -164,7 +164,7 @@ describe('ScrollSpyService', () => {
       expect(service.buffer[0]).toEqual({
         sectionId: 'section1',
         spyId: 'bar',
-        inViewport: true
+        inViewport: true,
       });
       expect(service.spys.length).toBe(1);
       expect(service.spys[0].items[1].inViewport).toBeTruthy();
@@ -175,6 +175,6 @@ describe('ScrollSpyService', () => {
       expect(service.spys.length).toBe(2);
       expect(service.spys[1].items[0].inViewport).toBeTruthy();
       expect(service.spys[1].items[0].active).toBeTruthy();
-    }
+    },
   ));
 });

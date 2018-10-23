@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 export const getWindow = () => window;
 
 export const inViewportProviders: Provider[] = [
-  { provide: WindowRef, useFactory: getWindow }
+  { provide: WindowRef, useFactory: getWindow },
 ];
 
 @NgModule({
@@ -16,8 +16,8 @@ export const inViewportProviders: Provider[] = [
   imports: [
     BrowserModule,
     InViewportModule.forRoot(inViewportProviders),
-    ScrollSpyModule.forRoot()
+    ScrollSpyModule.forRoot(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

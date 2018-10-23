@@ -4,7 +4,7 @@ import {
   QueryList,
   AfterViewInit,
   Input,
-  OnDestroy
+  OnDestroy,
 } from '@angular/core';
 
 import { ScrollSpyItemDirective } from '../scroll-spy-item/scroll-spy-item.directive';
@@ -27,7 +27,7 @@ import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
  *
  */
 @Directive({
-  selector: '[snScrollSpy]'
+  selector: '[snScrollSpy]',
 })
 export class ScrollSpyDirective implements AfterViewInit, OnDestroy {
   /**

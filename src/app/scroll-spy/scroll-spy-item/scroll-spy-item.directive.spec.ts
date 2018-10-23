@@ -4,7 +4,7 @@ import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
 describe('ScrollSpyDirective', () => {
   let directive: ScrollSpyItemDirective;
   const mockChangeDetectionRef = {
-    detectChanges: jasmine.createSpy('detectChanges')
+    detectChanges: jasmine.createSpy('detectChanges'),
   };
 
   beforeEach(() => {

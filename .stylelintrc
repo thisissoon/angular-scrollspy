@@ -1,12 +1,13 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier"
+  ],
+  "plugins": ["stylelint-order"],
   "rules": {
-    "order/order": [
-      "custom-properties",
-      "declarations"
-    ],
+    "order/order": ["custom-properties", "declarations"],
     "order/properties-alphabetical-order": true,
-    "no-empty-source": null,
     "selector-type-no-unknown": [
       true,
       {
@@ -18,12 +19,6 @@
       {
         "ignorePseudoElements": ["ng-deep"]
       }
-    ],
-    "declaration-colon-newline-after": null,
-    "at-rule-empty-line-before": null,
-    "block-closing-brace-newline-after": null
-  },
-  "plugins": [
-    "stylelint-order"
-  ]
+    ]
+  }
 }

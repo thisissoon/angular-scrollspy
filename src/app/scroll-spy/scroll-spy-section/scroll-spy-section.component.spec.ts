@@ -8,16 +8,16 @@ describe('ScrollSpySectionComponent', () => {
   let fixture: ComponentFixture<ScrollSpySectionComponent>;
   let component: ScrollSpySectionComponent;
   const mockScrollSpyService = {
-    setSpySectionStatus: jasmine.createSpy('setStatus')
+    setSpySectionStatus: jasmine.createSpy('setStatus'),
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       providers: [
-        { provide: ScrollSpyService, useValue: mockScrollSpyService }
+        { provide: ScrollSpyService, useValue: mockScrollSpyService },
       ],
       schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
-      declarations: [ScrollSpySectionComponent]
+      declarations: [ScrollSpySectionComponent],
     }).compileComponents();
   }));
 
@@ -34,7 +34,7 @@ describe('ScrollSpySectionComponent', () => {
     expect(mockScrollSpyService.setSpySectionStatus).toHaveBeenCalledWith(
       'bar',
       'foo',
-      true
+      true,
     );
 
     mockScrollSpyService.setSpySectionStatus.calls.reset();
@@ -42,7 +42,7 @@ describe('ScrollSpySectionComponent', () => {
     expect(mockScrollSpyService.setSpySectionStatus).toHaveBeenCalledWith(
       'bar',
       'foo',
-      false
+      false,
     );
   });
 });

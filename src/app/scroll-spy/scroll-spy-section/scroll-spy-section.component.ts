@@ -15,7 +15,7 @@ import { ScrollSpyService } from '../scroll-spy-service/scroll-spy.service';
 @Component({
   selector: 'sn-scroll-spy-section',
   templateUrl: './scroll-spy-section.component.html',
-  styleUrls: ['./scroll-spy-section.component.scss']
+  styleUrls: ['./scroll-spy-section.component.scss'],
 })
 export class ScrollSpySectionComponent {
   /**

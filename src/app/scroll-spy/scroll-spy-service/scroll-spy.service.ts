@@ -33,7 +33,7 @@ export class ScrollSpyService {
     const buffer = this.buffer.filter(i => i.spyId === id);
     this.buffer = this.buffer.filter(i => i.spyId !== id);
     buffer.forEach(i =>
-      this.setSpySectionStatus(i.sectionId, i.spyId, i.inViewport)
+      this.setSpySectionStatus(i.sectionId, i.spyId, i.inViewport),
     );
   }
   /**
@@ -55,7 +55,7 @@ export class ScrollSpyService {
   public setSpySectionStatus(
     sectionId: string,
     spyId: string,
-    inViewport: boolean
+    inViewport: boolean,
   ): void {
     const spy = this.spys.find(s => s.id === spyId);
     if (!spy) {
