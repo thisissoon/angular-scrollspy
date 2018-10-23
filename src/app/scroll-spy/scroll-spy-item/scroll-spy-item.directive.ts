@@ -25,19 +25,22 @@ export class ScrollSpyItemDirective {
    *
    * @memberof ScrollSpyItemDirective
    */
-  @HostBinding('class.active') public active = false;
+  @HostBinding('class.active')
+  public active = false;
   /**
    * ID of `ScrollSpyDirective` instance
    *
    * @memberof ScrollSpyItemDirective
    */
-  @Input() public for: string;
+  @Input()
+  public for: string;
   /**
    * Hash for section to link to
    *
    * @memberof ScrollSpyItemDirective
    */
-  @Input() public href: string;
+  @Input()
+  public href: string;
   /**
    * If true means the section is in the viewport
    *
