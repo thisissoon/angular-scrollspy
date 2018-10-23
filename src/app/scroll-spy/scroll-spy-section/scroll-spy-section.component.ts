@@ -33,15 +33,6 @@ export class ScrollSpySectionComponent {
   @Input()
   public for: string;
   /**
-   * Amount of time in ms to wait for other scroll events
-   * before running event handler
-   *
-   * @default 0
-   * @memberof ScrollSpySectionComponent
-   */
-  @Input()
-  public debounce = 0;
-  /**
    * Creates an instance of ScrollSpySectionComponent.
    * @memberof ScrollSpySectionComponent
    */

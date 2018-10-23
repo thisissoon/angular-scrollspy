@@ -16,23 +16,18 @@ This is a simple library for [Angular][angular], implemented in the [Angular Pac
 `app.module.ts`
 
 ```ts
-import { InViewportModule, WindowRef } from '@thisissoon/angular-inviewport';
+import { InViewportModule } from '@thisissoon/angular-inviewport';
 import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
 
-// Provide window object for browser and a suitable replacement
-// on other platforms
-const getWindow = () => window;
-const providers: Provider[] = [{ provide: WindowRef, useFactory: getWindow }];
-
 @NgModule({
-  imports: [InViewportModule.forRoot(providers), ScrollSpyModule.forRoot()]
+  imports: [InViewportModule, ScrollSpyModule.forRoot()],
 })
 export class AppModule {}
 ```
 
 ## Example
 
-A working example can be forund in the [src](https://github.com/thisissoon/angular-scrollspy/tree/master/src) folder.
+A working example can be found in the [src](https://github.com/thisissoon/angular-scrollspy/tree/master/src) folder.
 
 `app.component.html`
 
