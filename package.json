@@ -95,6 +95,8 @@
     "stylelint-order": "^1.0.0",
     "stylelint-scss": "^3.3.1",
     "ts-node": "~3.2.0",
+    "tsickle": "^0.34.0",
+    "tslib": "^1.9.3",
     "tslint": "~5.7.0",
     "tslint-config-prettier": "^1.15.0",
     "typescript": "~2.7.2",
