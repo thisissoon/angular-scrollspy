@@ -1,6 +1,6 @@
 {
   "name": "@thisissoon/angular-scrollspy",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": false,
   "description": "A simple lightweight library for Angular which automatically updates links to indicate the currently active section in the viewport",
   "keywords": [

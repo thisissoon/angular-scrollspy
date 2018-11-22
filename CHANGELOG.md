@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/thisissoon/angular-scrollspy/compare/v2.0.0...v2.1.0) (2018-11-22)
+
+
+### Features
+
+* **scrollCollapse:** update inviewport module to 4.0.0 ([c1f9357](https://github.com/thisissoon/angular-scrollspy/commit/c1f9357))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/thisissoon/angular-scrollspy/compare/v1.2.2...v2.0.0) (2018-05-29)
 
