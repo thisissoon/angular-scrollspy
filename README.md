@@ -60,7 +60,7 @@ a.active {
 
 ## Browser Support
 
-This library makes use of the [Intersection Observer API][intersection-observer-api] which requires a [polyfill][intersection-observer-polyfill] to work on some browsers.
+This library makes use of the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) which requires a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) to work on some browsers.
 
 ### Install the polyfill
 
