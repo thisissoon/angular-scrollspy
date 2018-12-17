@@ -58,6 +58,30 @@ a.active {
 }
 ```
 
+## Browser Support
+
+This library makes use of the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) which requires a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) to work on some browsers.
+
+### Install the polyfill
+
+```bash
+npm i intersection-observer
+```
+
+Or use yarn
+
+```bash
+yarn add intersection-observer
+```
+
+### Include the polyfill
+
+Add this somewhere in your `src/polyfills.ts` file
+
+```ts
+import 'intersection-observer';
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
